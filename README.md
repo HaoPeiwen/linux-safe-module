@@ -41,7 +41,7 @@ Tested on Ubuntu 14.04 (4.4.0-31) and Ubuntu 16.04 (4.13.0-36).
 - modify `safe.h` to your requirements
   ```c
   //the absolute path of its parent directory
-  #define SAFE_PARENT_PATHNAME "/home/xytao"
+  #define SAFE_PARENT_PATHNAME "/home/peiwen"
   //the directory's filename
   #define SAFE_FILENAME "safe"
   //allowed UID (use `echo $UID` to find out yours)
@@ -85,7 +85,24 @@ Tested on Ubuntu 14.04 (4.4.0-31) and Ubuntu 16.04 (4.13.0-36).
   ```shell
   gcc netlink-client.c -o netlink-client
   ```
-- Set it to path in order to use with [linux-safe-desktop](https://github.com/taoxinyi/linux-safe-desktop)
+- Set it to path in order to use with **safebox**
   ```shell
   sudo ln -s $(pwd)/netlink-client /usr/bin/netlink-client
   ```
+### Safebox
+The GUI desktop client for the linux-safe-module.
+
+#### Install
+  ```shell
+  cd safebox
+  npm install
+  npm run build
+  apt-get -f install
+  ```
+#### Support functionalities
+- Open terminal at current directory
+- Paste file/directory from clipboard
+- AES Encryption && Decryption
+- Rename
+- Refresh
+
